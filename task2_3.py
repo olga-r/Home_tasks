@@ -1,9 +1,7 @@
-def remove_spaces(string):
-    string = string.strip().split()
-    string = ''.join(string)
-    return string
 
 def is_palindrome(string):
+    string = string.strip().split()
+    string = ''.join(string)
     for i in range(len(string)//2):
         #print(string[i], string[len(string)-1-i]) 
         if string[i] != string[len(string)-1-i]:      
@@ -13,11 +11,11 @@ def is_palindrome(string):
         
 # input
 your_string = input('Enter your string: ')
-spaces = input("Take into account spaces: Y/N: ")
+capitals = input("Take into account capitals: Y/N: ")
 
 #solution
-if spaces == "N":
-    your_string = remove_spaces(your_string)
+if capitals == "N":
+    your_string = your_string.lower()
 if is_palindrome(your_string):
     print('Your string is a palindrome')
 else:
